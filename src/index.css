@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html, body, #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-slate-50 text-slate-900 antialiased;
+    /* Prevent pull-to-refresh on mobile if it interferes with the app feel */
+    overscroll-behavior-y: contain;
+  }
+
+  /* Custom focus ring for accessibility */
+  :focus-visible {
+    @apply outline-none ring-2 ring-blue-500 ring-offset-2;
+  }
+}
+
+/* Hide scrollbar for cleaner look on mobile */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
